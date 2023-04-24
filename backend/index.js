@@ -3,7 +3,6 @@ const cors = require("cors");
 const { connection } = require("./config/db");
 const { userRouter } = require("./Routes/userroute");
 
-
 require("dotenv").config();
 let app = express();
 app.use(cors());
@@ -12,7 +11,6 @@ app.get("/", (req, res) => {
   res.send("welcome pococare");
 });
 app.use("/", userRouter);
-
 
 app.listen(process.env.PORT, async () => {
   try {
